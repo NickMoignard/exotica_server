@@ -2,23 +2,23 @@ class DancersController < ApplicationController
   before_action :set_dancer, only: [:show, :edit, :update, :destroy]
 
   #POST /dancers/arrival
-  def arrival
-    @girl = Dancer.find_or_create_by(name: params[:name] )
-  
-    respond_to do |format|
-      if @girl.update
-        format.html { redirect_to @dancer, notice: 'Dancer was successfully updated.' }
-        format.json { render :show, status: :ok, location: @dancer }
-      else
-        format.html { render :edit }
-        format.json { render json: @dancer.errors, status: :unprocessable_entity }
-      end
-    end
-  end
-  def departure
-    @girl = Dancer.find_or_create_by(name: params[:name])
-    @girl.present = false
-  end
+  # def arrival
+  #   @girl = Dancer.find_or_create_by(name: params[:name] )
+
+  #   respond_to do |format|
+  #     if @girl.update(present: true)
+  #       format.html { redirect_to @dancer, notice: 'Dancer was successfully updated.' }
+  #       format.json { render :show, status: :ok, location: @dancer }
+  #     else
+  #       format.html { render :edit }
+  #       format.json { render json: @dancer.errors, status: :unprocessable_entity }
+  #     end
+  #   end
+  # end
+  # def departure
+  #   @girl = Dancer.find_or_create_by(name: params[:name])
+  #   @girl.present = false
+  # end
 
 
   # GET /dancers

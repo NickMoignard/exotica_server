@@ -1,5 +1,5 @@
 class TimeSlotsController < ApplicationController
-  @pole_ids = { "upstairs_main" => 0, "upstairs_secondary" => 1, "downstairs_one" => 2, "downstairs_two" => 3, "downstairs_booth" => 4, "downstairs_bar" => 5 }
+  
 
 
   before_action :set_time_slot, only: [:show, :edit, :update, :destroy]
@@ -28,13 +28,6 @@ class TimeSlotsController < ApplicationController
   # POST /time_slots.json
   def create
     @time_slot = TimeSlot.new(time_slot_params)
-    @dancer_strings = time_slot_pole_array
-
-    @dancer_strings.each do |str|
-      @time_slot.dancers << Dancer.create(fake_name: str)
-    end
-
-
 
     respond_to do |format|
       if @time_slot.save
@@ -50,6 +43,8 @@ class TimeSlotsController < ApplicationController
   # PATCH/PUT /time_slots/1
   # PATCH/PUT /time_slots/1.json
   def update
+    @dancers = @time_slot.dancers
+
     respond_to do |format|
       if @time_slot.update(time_slot_params)
         format.html { redirect_to @time_slot, notice: 'Time slot was successfully updated.' }
@@ -67,7 +62,7 @@ class TimeSlotsController < ApplicationController
     @time_slot.destroy
     respond_to do |format|
       format.html { redirect_to time_slots_url, notice: 'Time slot was successfully destroyed.' }
-      format.json { head :no_content }
+      format.json { head :no_content, message: "Success" }
     end
   end
 
@@ -79,21 +74,9 @@ class TimeSlotsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def time_slot_params
-      params.permit(:time, :poles)
+      params.permit(:time_slot, :upstairs_main, :upstairs_secondary, :downstairs_one, :downstairs_two, :downstairs_booth, :downstairs_bar, :time)
     end
 
-    def time_slot_pole_array
-      # this does not seem to work....
-      # Params should be time:datetime, poles : { "upstairs_main" => "<fake_name>", ... }
-      @poles = params[:poles]
-      @dancer_strings = ["", "", "", "", "", ""]
-      @poles.keys.each do |key|
-         @dancer_strings[@pole_ids[key]] = @poles[key]
-      end
-      return @dancer_strings
-
-  
-    end
 
     
 

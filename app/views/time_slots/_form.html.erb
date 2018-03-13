@@ -1,22 +1,23 @@
-<%= form_with(model: time_slot, local: true) do |form| %>
-  <% if time_slot.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(time_slot.errors.count, "error") %> prohibited this time_slot from being saved:</h2>
 
-      <ul>
-      <% time_slot.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
 
-  <div class="field">
-    <%= form.label :time %>
-    <%= form.datetime_select :time, id: :time_slot_time %>
-  </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+
+<%= form_for @time_slot do |f|%>
+  <%= f.time_field :time %>
+
+
+  <%= f.text_field :upstairs_main %>
+
+  <%= f.text_field :upstairs_secondary %>  
+
+  <%= f.text_field :downstairs_one %>
+
+  <%= f.text_field :downstairs_two %>
+
+  <%= f.text_field :downstairs_booth %>
+
+  <%= f.text_field :downstairs_bar %>
+
+  <%= f.submit "Update" %>
 <% end %>
+
