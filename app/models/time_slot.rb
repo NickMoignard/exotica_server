@@ -1,3 +1,4 @@
+
 class TimeSlot < ApplicationRecord
     POLE_IDS = { "upstairs_main" => 0, "upstairs_secondary" => 1, "downstairs_one" => 2, "downstairs_two" => 3, "downstairs_booth" => 4, "downstairs_bar" => 5 }
     $dancer_strings = ["", "", "", "", "", ""]
@@ -11,6 +12,7 @@ class TimeSlot < ApplicationRecord
         add_dancers
     end
     def upstairs_main
+        puts $dancer_strings[0]
         $dancer_strings[0]
     end
     def upstairs_secondary=(_name)
@@ -18,6 +20,7 @@ class TimeSlot < ApplicationRecord
         add_dancers
     end
     def upstairs_secondary
+        puts $dancer_strings[1]
         $dancer_strings[1]
     end
     def downstairs_one=(_name)
@@ -25,6 +28,7 @@ class TimeSlot < ApplicationRecord
         add_dancers
     end
     def downstairs_one
+        puts $dancer_strings[2]
         $dancer_strings[2]
     end    
     def downstairs_two=(_name)
@@ -32,6 +36,7 @@ class TimeSlot < ApplicationRecord
         add_dancers
     end
     def downstairs_two
+        puts $dancer_strings[3]
         $dancer_strings[3]
     end
     def downstairs_booth=(_name)
@@ -39,6 +44,7 @@ class TimeSlot < ApplicationRecord
         add_dancers
     end
     def downstairs_booth
+        puts $dancer_strings[4]
         $dancer_strings[4]
     end
     def downstairs_bar=(_name)
@@ -46,6 +52,7 @@ class TimeSlot < ApplicationRecord
         add_dancers
     end
     def downstairs_bar
+        puts $dancer_strings[5]
         $dancer_strings[5]
     end
 

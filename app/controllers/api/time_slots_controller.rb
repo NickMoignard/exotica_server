@@ -7,6 +7,7 @@ module Api
     # GET /time_slots.json
     def index
       @time_slots = TimeSlot.all
+      
       json_response(@time_slots)
     end
 
