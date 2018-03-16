@@ -28,6 +28,11 @@
 @num_min_in_day_float = 1440.0
 @num_time_slots = 36
 @set_length = 15
+
+def rand_fake_name
+    return @fake_names[rand(@fake_names.count)]
+end
+
 # UNCOMMENT TO POPULATE DANCERS
 @fake_names.each do |name|
     Dancer.create(fake_name: name)
@@ -43,21 +48,17 @@ end
 # Uncomment to add dancers to the time slots
 @slots = TimeSlot.all
 @slots.each do |s|
-    s.upstairs_main = "FUCK MY DAD"
-    s.upstairs_secondary  = "FUCK MY DAD"
-    s.downstairs_one  = "FUCK MY DAD"
-    s.downstairs_two  = "FUCK MY DAD"
-    s.downstairs_booth  = "FUCK MY DAD"
-    s.downstairs_bar  = "FUCK MY DAD"
+    s.upstairs_main = rand_fake_name()
+    s.upstairs_secondary  = rand_fake_name()
+    s.downstairs_one  = rand_fake_name()
+    s.downstairs_two  = rand_fake_name()
+    s.downstairs_booth  = rand_fake_name()
+    s.downstairs_bar  = rand_fake_name()
 end    
 
 # HELPERS
 def open(day: string)
     return { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(day)
-end
-
-def rand_fake_name
-    return @fake_names[rand(@fake_names.count)]
 end
 
 

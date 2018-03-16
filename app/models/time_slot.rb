@@ -62,7 +62,7 @@ class TimeSlot < ApplicationRecord
             #clear the dancers then reinsert each dancer in order
             self.dancers = []
             $dancer_strings.each do |str|
-                self.dancers << Dancer.create(fake_name: str)
+                self.dancers << Dancer.find_or_create_by(name: str.downcase)
             end
         end
 end
