@@ -1,21 +1,19 @@
-
-
 <table>
   <thead>
     <tr>
       <th>Time</th>
-      <th>Upstairs Main</th>
-      <th>Upstairs Secondary</th>
-      <th>Downstairs One</th>
-      <th>Downstairs Two</th>
-      <th>Downstairs Booth</th>
-      <th>Downstairs Bar</th>
+      <th>First floor Stage</th>
+      <th>First floor Booth</th>
+      <th>Ground floor Stage</th>
+      <th>Ground floor Stage</th>
+      <th>Ground floor Booth</th>
+      <th>Ground floor Bar</th>
       <th colspan="2"></th>
     </tr>
   </thead>
 
   <tbody>
-        
+
     <% @time_slots.each do |time_slot_hash| %>
       <tr>
         <td class="display-time"><%= time_slot_hash.time.strftime("%I:%M %p") %></td>
