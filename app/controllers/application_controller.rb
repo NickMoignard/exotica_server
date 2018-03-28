@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   
   include Response
   include ExceptionHandler
+  
 
   # Allow http requests other than GET from Postman
   skip_before_action :verify_authenticity_token

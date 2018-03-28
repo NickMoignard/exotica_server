@@ -1,6 +1,4 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Time Slots</h1>
 
 <table>
   <thead>
@@ -20,23 +18,15 @@
         
     <% @time_slots.each do |time_slot_hash| %>
       <tr>
-        <td><%= time_slot_hash.time %></td>
-        
+        <td class="display-time"><%= time_slot_hash.time.strftime("%I:%M %p") %></td>
         <% 6.times do |i| %>
           <% if time_slot_hash.dancers[i] != nil %>
-            <td><%= time_slot_hash.dancers[i].fake_name %></td>
+            <td><%= time_slot_hash.dancers[i].fake_name.capitalize %></td>
           <% end %>
         <% end %>
-
-        <td><%= link_to 'Show', time_slot_hash %></td>
-        <td><%= link_to 'Edit', edit_time_slot_path(time_slot_hash) %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Time Slot', new_time_slot_path %>
 
 

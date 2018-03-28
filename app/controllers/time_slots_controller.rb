@@ -7,7 +7,18 @@ class TimeSlotsController < ApplicationController
   # GET /time_slots
   # GET /time_slots.json
   def index
-    @time_slots = TimeSlot.all
+    @time_slots = []
+    # only display time slots in the future
+    TimeSlot.find_each do |ts|
+      if ts.time >= DateTime.now
+        puts "compare these two"
+        puts ts.time
+        puts DateTime.now
+        puts ""
+        @time_slots << ts
+      end
+    end
+
   end
 
   # GET /time_slots/1
@@ -77,7 +88,12 @@ class TimeSlotsController < ApplicationController
       params.permit(:time_slot, :upstairs_main, :upstairs_secondary, :downstairs_one, :downstairs_two, :downstairs_booth, :downstairs_bar, :time)
     end
 
-
+    # def refresh_time_slots
+    #   @time_slots = TimeSlot.all( :conditions => ["time >= :now", { :now => DateTime.now }])
+    #   # Client.all(:conditions =>
+    #   #   ["created_at >= :start_date AND created_at <= :end_date",
+    #   #      { :start_date => params[:start_date], :end_date => params[:end_date] }])
+    # end
     
 
 end
