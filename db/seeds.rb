@@ -34,10 +34,10 @@ def rand_fake_name
 end
 
 # UNCOMMENT TO POPULATE DANCERS
-# @fake_names.each do |name|
-#     Dancer.create(fake_name: name)
+@fake_names.each do |name|
+    Dancer.create(fake_name: name)
 
-# end
+end
 
 # Create time slots for the day
 @num_time_slots.times do |i|
@@ -46,17 +46,17 @@ end
 end
 
 # Uncomment to add dancers to the time slots
-# @slots = TimeSlot.all
-# @slots.each do |s|
-#     # s.upstairs_main = rand_fake_name()
-#     # s.upstairs_secondary  = rand_fake_name()
-#     # s.downstairs_one  = rand_fake_name()
-#     # s.downstairs_two  = rand_fake_name()
-#     # s.downstairs_booth  = rand_fake_name()
-#     # s.downstairs_bar  = rand_fake_name()
-# end    
-# puts "current time"
-# puts DateTime.now
+@slots = TimeSlot.all
+@slots.each do |s|
+
+    # s.downstairs_booth  = rand_fake_name()    s.upstairs_main = rand_fake_name()
+    s.upstairs_secondary  = rand_fake_name()
+    s.downstairs_one  = rand_fake_name()
+    s.downstairs_two  = rand_fake_name()
+    # s.downstairs_bar  = rand_fake_name()
+end    
+puts "current time"
+puts DateTime.now
 
 # HELPERS
 def open(day: string)
