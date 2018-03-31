@@ -1,24 +1,32 @@
-# README
+This application was created at the request of a client
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Problem:
 
-Things you may want to cover:
+ * Gentlemens Lounge's can have from 20 - 100 dancers working at once. Each dancer will perform multiple times throughout the night in a variety of locations around each venue.
 
-* Ruby version
+ * Each night a roster for the dancers is created by the manager on paper. Currently the manager has to either handwrite copies of the original sheet or individually remind each dancer.
 
-* System dependencies
+ * Rosters are created by hand throughout the night, as they are subject to change at very short notice due to girls giving private dances.
 
-* Configuration
+Solution:
 
-* Database creation
+ * Create a digital Roster stored in the cloud (Ruby on Rails : RESTFul JSON API) 
+ * Display Roster on televisions throughout each venue ( Single View Webpage )
+ * Give venue managers an iPad with an app to edit the roster ( iOS Application )
 
-* Database initialization
 
-* How to run the test suite
+# Ruby version
 
-* Services (job queues, cache servers, search engines, etc.)
+# System dependencies
 
-* Deployment instructions
+# Configuration
 
-* ...
+# Database creation
+
+# Database initialization
+
+# How to run the test suite
+
+# Services (job queues, cache servers, search engines, etc.)
+
+# Deployment instructions
