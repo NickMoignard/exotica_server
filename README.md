@@ -1,3 +1,13 @@
+# Gentlemens Lounge website & Roster server
+  Dancer Roster API
+  Stage Time Table Website
+  iOS Application (seperate repo https://www.github.com/nickmoignard/strip_club_roster)
+  
+1. An ubuntu server using google chrome & chromecasts in televisions distrubuted around the club allows the dancers to check their performance times. ( The server casts : http://13.211.150.198:3000/time_slots to every screen )
+2. An AWS EC2 instance hosts the Application.
+3. iPad Mini 2 with app installed
+
+
 This application was created at the request of a client
 
 The Problem:
@@ -15,18 +25,17 @@ Solution:
  * Give venue managers an iPad with an app to edit the roster ( iOS Application )
 
 
-# Ruby version
-
-# System dependencies
+ruby 2.4.1p111 (2017-03-22 revision 58053)
+Rails 5.1.5
 
 # Configuration
-
-# Database creation
-
-# Database initialization
-
-# How to run the test suite
+install gems:
+          $ bundle install
+init db:  
+          $ rails db:migrate
+          $ rails db:seed
+start server:
+          $ rails s
 
 # Services (job queues, cache servers, search engines, etc.)
-
-# Deployment instructions
+Create new time slots each day at 6 pm *** YET TO BE WRITTEN ***
