@@ -3,6 +3,9 @@
   Stage Time Table Website
   iOS Application (seperate repo https://www.github.com/nickmoignard/strip_club_roster)
   
+  Demo: https://youtu.be/jUvIfY8BoW0
+  
+  
 1. An ubuntu server using google chrome & chromecasts in televisions distrubuted around the club allows the dancers to check their performance times. ( The server casts : http://13.211.150.198:3000/time_slots to every screen )
 2. An AWS EC2 instance hosts the Application.
 3. iPad Mini 2 with app installed
