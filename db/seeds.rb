@@ -11,18 +11,29 @@
 @num_time_slots = 36
 @set_length = 15
 
+
+# HELPERS
+def rand_fake_name
+    return @fake_names[rand(@fake_names.count)]
+end
+
+def open(day: string)
+    return { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(day)
+end
+
+
 # CREATE TIMESLOTS
 @num_time_slots.times do |i|
     _time = @eight_pm + 15*i.minutes
     @timeSlots.append(TimeSlot.create(time: _time))
 end
 
-# CREATE DANCERS
+# # CREATE DANCERS
 # @fake_names.each do |name|
 #     Dancer.create(fake_name: name)
 # end
 
-# POPULATE TIMESLOTS WITH DANCERS
+# # POPULATE TIMESLOTS WITH DANCERS
 # @slots = TimeSlot.all
 # @slots.each do |s|
 #     s.downstairs_booth  = rand_fake_name()    
@@ -33,13 +44,5 @@ end
 #     s.downstairs_bar  = rand_fake_name()
 # end  
 
-# HELPERS
-def rand_fake_name
-    return @fake_names[rand(@fake_names.count)]
-end
-
-def open(day: string)
-    return { "wednesday" => true, "thursday" => true, "friday" => true, "saturday" => true, "sunday" => true }.key?(day)
-end
 
 
