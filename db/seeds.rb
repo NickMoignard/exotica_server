@@ -30,16 +30,16 @@ end
 
 # # CREATE DANCERS
 @fake_names.each do |name|
-    Dancer.create(fake_name: name)
+    # Dancer.create(fake_name: name)
 end
 
 # # POPULATE TIMESLOTS WITH DANCERS
 @slots = TimeSlot.all
 @slots.each do |s|
-    # s.downstairs_booth  = rand_fake_name()    
+    s.downstairs_booth  = rand_fake_name()    
     s.upstairs_main = rand_fake_name()
     # s.upstairs_secondary  = rand_fake_name()
-    s.downstairs_one  = rand_fake_name()
+    # s.downstairs_one  = rand_fake_name()
     # s.downstairs_two  = rand_fake_name()
     s.downstairs_bar  = rand_fake_name()
 end  

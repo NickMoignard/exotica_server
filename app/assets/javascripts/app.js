@@ -3,7 +3,7 @@ $(document).ready(function(){
     $(this).find('td').each (function( column, td) {
         var td = $(td);
 
-        if (count >= 1 && count <= 6) {
+        if (count >= 1 && count <= 6 && !(td.text().includes("PM") || td.text().includes("AM"))) {
             if (td.text() != "") {
                 td.addClass('highlight-td');
             }
