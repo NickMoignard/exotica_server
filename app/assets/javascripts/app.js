@@ -1,5 +1,16 @@
 $(document).ready(function(){
-    alert('jquery engaged');
-});
+    var count = 0;
+    $(this).find('td').each (function( column, td) {
+        var td = $(td);
 
-alert('sup dad');
+        if (count >= 1 && count <= 6) {
+            if (td.text() != "") {
+                td.addClass('highlight-td');
+            }
+        } else if (count == 0) {
+            td.html('Now Dancing:');
+        }
+        count = count + 1;
+    });  
+    
+});
