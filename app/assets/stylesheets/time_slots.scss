@@ -24,9 +24,17 @@ table td {
     color: rgba(255,255,255,0.9);
     font-size: 1.7em;
     text-align: center;
-    padding-bottom: 40px;
+    padding-bottom: 20px;
+    padding-top: 20px;
     font-family: 'BioRhyme', serif;
+
 }
+
+.highlight-td {
+    background-color: rgba(255,255,255,0.2);
+    border-radius: 5px;
+}
+
 body {
     background: #141414;
     background-image: image-url("background.jpg"); /* fallback */

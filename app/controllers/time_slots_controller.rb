@@ -10,7 +10,7 @@ class TimeSlotsController < ApplicationController
     @time_slots = []
     # only display time slots in the future
     TimeSlot.find_each do |ts|
-      if ts.time >= DateTime.now
+      if ts.time >= DateTime.now.new_offset('-00:15')
         puts "compare these two"
         puts ts.time
         puts DateTime.now
