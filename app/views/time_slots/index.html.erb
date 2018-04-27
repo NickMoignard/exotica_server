@@ -16,7 +16,7 @@
       <tr>
         <td>Dancing Now: </td>
         <% 6.times do |i| %>
-          <% if @now_slot != nil && @now_slot.dancers[i].fake_name != "" %>
+          <% if @now_slot != nil &&  @now_slot.dancers[i] != nil && @now_slot.dancers[i].fake_name != "" %>
             <td class="highlight-td"><%= @now_slot.dancers[i].fake_name.capitalize %></td>
           <% else %>
             <td></td>
