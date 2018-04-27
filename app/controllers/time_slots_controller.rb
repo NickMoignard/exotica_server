@@ -1,3 +1,5 @@
+require 'active_support/core_ext/numeric/time.rb'
+
 class TimeSlotsController < ApplicationController
   
 
@@ -8,17 +10,18 @@ class TimeSlotsController < ApplicationController
   # GET /time_slots.json
   def index
     @time_slots = []
+
     # only display time slots in the future
     TimeSlot.find_each do |ts|
-      if ts.time >= DateTime.now.new_offset('-00:15')
-        puts "compare these two"
-        puts ts.time
-        puts DateTime.now
-        puts ""
+      if (ts.time > DateTime.now - 15.minutes && ts.time < DateTime.now)
+        puts "#{ts.time} #{DateTime.now}"
+        @now_slot = ts
+      end
+
+      if ts.time >= DateTime.now
         @time_slots << ts
       end
     end
-
   end
 
   # GET /time_slots/1

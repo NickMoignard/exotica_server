@@ -13,7 +13,16 @@
   </thead>
 
   <tbody>
-
+      <tr>
+        <td>Dancing Now: </td>
+        <% 6.times do |i| %>
+          <% if @now_slot != nil && @now_slot.dancers[i].fake_name != "" %>
+            <td class="highlight-td"><%= @now_slot.dancers[i].fake_name.capitalize %></td>
+          <% else %>
+            <td></td>
+          <% end %>
+        <% end %>
+      </tr>
     <% @time_slots.each do |time_slot_hash| %>
       <tr>
         <td class="display-time"><%= time_slot_hash.time.strftime("%I:%M %p") %></td>
